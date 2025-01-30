@@ -1,0 +1,5 @@
+site_name: personal doc wecsite
+
+site_url: https://univergao.github.io/
+theme:
+  name: material
