@@ -10,4 +10,19 @@ theme:
 nav:
   - Home: index.md
   - Control Systems:
-    - Ch1 - Introduction to control systems: control_systems/chapter1_introduction.md
+    - Ch1 - Introduction: control_systems/chapter1_introduction.md
+    - Ch2 - Math Modules: control_systems/chapter2_mathematical_model.md
+
+plugins:
+  - glightbox
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - javascripts/tex-mml-chtml.js

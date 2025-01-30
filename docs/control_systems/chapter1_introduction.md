@@ -1,4 +1,4 @@
-# Chapture 1 Introduction to control systems
+# Chapture 1. Introduction to control systems
 
 ## 1.1 introduction
 
