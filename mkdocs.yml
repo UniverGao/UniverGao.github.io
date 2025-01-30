@@ -3,3 +3,11 @@ site_name: personal doc wecsite
 site_url: https://univergao.github.io/
 theme:
   name: material
+  features: 
+    - navigation.tabs
+    - navigation.path
+
+nav:
+  - Home: index.md
+  - Control Systems:
+    - Ch1 - Introduction to control systems: control_systems/chapter1_introduction.md
