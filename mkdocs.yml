@@ -12,6 +12,9 @@ nav:
   - Control Systems:
     - Ch1 - Introduction: control_systems/chapter1_introduction.md
     - Ch2 - Math Modules: control_systems/chapter2_mathematical_model.md
+  - Control of Power Electronics:
+    - Ch1 - Introduction: control_of_power_electronic/chapter1_overview.md
+
 
 plugins:
   - glightbox

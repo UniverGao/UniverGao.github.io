@@ -141,6 +141,7 @@ $$
 $$
 
 ![pendulum osi](fig/chapter2/fig_2_3_pendulum_osi.png)
+
 *fig 2.3 Pendulum oscillator*
 
 Consider the pendulum oscillator shown in Figure 2.6(a). The torque on the mass is:
@@ -210,3 +211,23 @@ Then we also have the integral operator:
 $$
 \frac{1}{s} = \int_{0^-}^{t}dt
 $$
+
+## 2.4 The Transfer Function of Linear Systems
+
+Let us consider the long-term behavior of a system and determine the response to certain inputs that remain after the transients fade away. Consider the dynamic system represented by the differential equation:
+
+$$
+\begin{split}
+\frac{d^ny(t)}{dt^n} + q_{n-1}\frac{d^{n-1}y(t)}{dt^{n-1}} + ...+q_0y(t) \\
+=p_{n-1}\frac{d^{n-1}r(t)}{dt^{n-1}} + p_{n-2}\frac{d^{n-2}}{dt^{n-2}} + ... +p_0r(t)
+\end{split}
+\tag{2.14}
+$$
+
+where $y(t)$ is the response, and $r(t)$ is the input or forcing function. If the initial conditions are all zero, then the transfer function is the coefficient of $R(s)$ in:
+
+$$
+Y(s) = G(s)R(s) = \frac{p_{n-1}s^{n-1} + p_{n-2}s^{n-2} + ... + p_0}{s^n + q_{n-1}s^{n-1} + ... + q_0} R(s) \tag{2.15}
+$$
+
+
