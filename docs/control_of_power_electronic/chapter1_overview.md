@@ -69,7 +69,7 @@ Based on the nature of exponential function, Eq. (1.6) can be rewritten as follo
 
 $$
 \begin{split}
-G_{BRC}(s) = \frac{k_{RC}}{2} + \frac{k_{RC}}{T_0s + T_0\omega_c} + \frac{2k_{RC}}{T_0}\sum_{n=1}^\infty\frac{s + \omega_c}{s^2 + 2\omega_c s +(n\omega_0)^2} \\ 
+G_{BRC}(s) = -\frac{k_{RC}}{2} + \frac{k_{RC}}{T_0s + T_0\omega_c} + \frac{2k_{RC}}{T_0}\sum_{n=1}^\infty\frac{s + \omega_c}{s^2 + 2\omega_c s + \omega_c^2+(n\omega_0)^2} \\ 
 \approx -\frac{k_{RC}}{2} + \frac{k_{RC}}{T_0s + T_0\omega_c} + \frac{2k_{RC}}{T_0}\sum_{n=1}^\infty \frac{s + \omega_c}{s^2 +2\omega_c s + (n\omega_0)^2} 
 \end{split}
 \tag{1.7}
@@ -78,3 +78,32 @@ $$
 When $\omega_c$ is far smaller than $\omega_0$, the symbol of approximate equal holds. $\omega_c$ is the resonant bandwidth and $\omega_c = -\ln Q/T_0$.
 
 From Eq. (1.7), it can be seen that the integral element in Eq. (1.5) becomes an inertial element, and the resonant controllers become quasi-resonant controllers.
+
+### 1.1.4 Pole placement control
+
+Based on the system data considered and the operating condition, the state equation of the system under study is given by:
+
+$$
+\dot{X} = AX + BU
+$$
+
+Where $U$ is input signal, we set the the feedback that the output is set as input: $U = -KX$, The use of state feedback control modifies the system state equation to $\dot{X} = (A - BK)X$, which is the state variable presentation of the compensated system. The characteristic equation of the compensated system is: $|sI -A + BK| = 0$, Here, the state feedback gain matrix K can be determined using the Ackermann’s formula, which is:
+
+$$
+K =
+\begin{bmatrix}
+0 & 0 & 0 & ... & 1
+\end{bmatrix}
+\begin{bmatrix}
+B & AB & ... & A^{n-1}B
+\end{bmatrix}
+\phi(A)
+\tag{1.8}
+$$
+
+where $\phi(A) = A^n + \alpha_1 A^{n-1} + ... + \alpha_{n-1} A + \alpha_n I$, $\alpha_i$ are the coefficients of the desired characteristic polynomial.
+
+However, the pole placement control is based on an accurate model of the system. The control performance will be deteriorated if the system parameters are deviated. Furthermore, the pole placement control is only applicable for a linear plant, which might be a limitation for this method, since most power electronic plants are nonlinear.
+
+### 1.1.5 Linear quadratic regulator
+
